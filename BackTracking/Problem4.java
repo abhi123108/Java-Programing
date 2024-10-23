@@ -31,6 +31,6 @@ public class Problem4 {
                 board[i][j]='.';
             }
         }
-        
+        nQueens(board , 0);
     }
 }
