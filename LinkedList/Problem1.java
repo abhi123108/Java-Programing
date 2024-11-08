@@ -18,7 +18,7 @@ public class Problem1 {
     public static Node tail;
     public static int size;
 
-    public int itrSearch(int key) {
+    public int itrSearch(int key) { //O(n)
         Node temp = head;
         int i = 0;
 
@@ -98,8 +98,46 @@ public class Problem1 {
         }
         return idx+1;
     }
-    public int recSearch(int key){
+    public int recSearch(int key){  //O(n)
         return helper(head, key);
+    }
+
+    public void reverse(){   //O(n)
+        Node prev=null;
+        Node curr=tail=head;
+        Node next;
+        while (curr!=null) {
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+    }
+
+    public void deleteNthFromEnd(int n){
+        int size=0;
+        Node temp=head;
+        while (temp!=null) {
+            temp = temp.next;
+            size++;
+        }
+
+        if (n==size) {
+            head=head.next;   //remove first
+            return;
+        }
+        
+        //size-n
+        int i=1;
+        int iToFind=size-n;
+        Node prev=head;
+        while (i<iToFind) {
+            prev=prev.next;
+            i++;
+        }
+        prev.next=prev.next.next;
+        return;
     }
 
     public static void main(String[] args) {
@@ -112,8 +150,7 @@ public class Problem1 {
         ll.add(2, 3);
 
         ll.print();
-        System.out.println(ll.recSearch(3));
-        System.out.println(ll.recSearch(10));
+        ll.deleteNthFromEnd(3);
+        ll.print();
     }
 }
-
