@@ -25,7 +25,7 @@ public class Classroom {
     list.set(2 ,10);
     System.out.println(list);
 
-    //contain    O(n)
+    //contain   TC- O(n)
     System.out.println(list.contains(1));
     System.out.println(list.contains(11));
     }
