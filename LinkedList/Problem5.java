@@ -1,7 +1,7 @@
 package LinkedList;
 import java.util.*;
 
-// Zig Zag LinkedList
+// Zig Zag LinkedList .
 
 class Node {
     int data;
