@@ -38,6 +38,42 @@ public class DoublyLinkedList {
         }
         System.out.println("null");
     }
+
+    //remove
+
+    public int removeFirst(){
+        if (head==null) {
+            System.out.println("DLL mis empty");
+            return Integer.MIN_VALUE;
+        }
+        if (size==1) {
+            int val=head.data;
+            head=tail=null;
+            size--;
+            return val;
+        }
+        int val =head.data;
+        head=head.next;
+        head.prev=null;
+        size--;
+        return val;
+    }
+
+    public void revrse(){
+        Node curr=head;
+        Node prev=null;
+        Node next;
+
+        while (curr!=null) {
+            next=curr.next;
+            curr.next=prev;
+            curr.prev=next;
+
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+    }
     public static void main(String[] args) {
         DoublyLinkedList dll = new DoublyLinkedList();
         dll.addFirst(3);
@@ -46,5 +82,14 @@ public class DoublyLinkedList {
 
         dll.print();
         System.out.println(dll.size);
+
+        dll.removeFirst();
+        dll.print();
+        System.out.println(dll.size);
+
+        dll.print();
+        dll.revrse();
+        dll.print();
     }
 }
+
