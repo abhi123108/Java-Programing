@@ -1,5 +1,5 @@
 package LinkedList;
-
+//Doubly Linked list
 public class DoublyLinkedList {
     public class Node {
         int data;
