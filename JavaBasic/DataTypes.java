@@ -1,5 +1,6 @@
 public class DataTypes {
     public static void main(String[] args) {
+        //Datatypes
         byte b=4;
         System.out.println(b);
         char ch='a';
