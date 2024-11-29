@@ -1,5 +1,5 @@
 package ArrList;
-//classroom
+//classroom Array list 
 import java.util.ArrayList;
 public class Classroom {
     public static void main(String[] args) {
